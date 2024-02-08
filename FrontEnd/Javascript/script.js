@@ -1,7 +1,7 @@
 fetch("http://localhost:5678/api/works")
 .then(response => response.json())
-.then((json) => console.log(json))
+.then((works) => console.log(works))
 
 fetch("http://localhost:5678/api/categories")
 .then(response => response.json())
-.then((json) => console.log(json))
+.then((categories) => console.log(categories))
