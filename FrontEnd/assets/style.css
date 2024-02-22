@@ -194,9 +194,9 @@ footer nav ul {
 /* css des boutons de filtres */
 
 .filters {
-    display: flex; /* Utilisation de flexbox pour aligner les boutons sur une ligne */
-    justify-content: center; /* Centrer les boutons horizontalement */
-    flex-wrap: wrap; /* Permettre le retour à la ligne des boutons si nécessaire */
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
 }
 
 .filterButton {
@@ -265,8 +265,9 @@ footer nav ul {
 	font-style: normal;
 	font-weight: 500;
 	line-height: normal;
-	text-decoration-line: underline;
+	text-decoration: none;
 	margin-bottom: 70px;
+	text-decoration-line: underline;
   }
 
   /* style mode admin */
@@ -280,7 +281,7 @@ footer nav ul {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	align-items: center;
-	/* display: none; */
+	display: none;
   }
   
   .editionMod p {

@@ -1,7 +1,7 @@
 const API_URL = "http://localhost:5678/api";
 const storageToken = localStorage.token;
 
-function logApi(event) {
+export function logApi(event) {
     event.preventDefault(); // Empêche le comportement par défaut du formulaire
 
     // Récupère les valeurs des champs email et mot de passe du formulaire
@@ -38,3 +38,26 @@ function logApi(event) {
 
 // Ajoute un gestionnaire d'événement pour le formulaire de connexion
 document.querySelector('#login form').addEventListener('submit', logApi);
+
+export function LogOut() {
+    const loginOut = document.querySelector("a");
+    const token =localStorage.getItem("token")
+    console.log(token)
+
+    //Si token présent alors on affiche logout 
+
+    if(token) {
+        loginOut.textContent ="Logout"
+        loginOut.href="index.html"
+        loginOut.addEventListener("click", function(){
+            localStorage.removeItem("token")
+            window.location.href = "index.html"
+        })
+    } else {
+    //si aucun token afficher login 
+    loginOut.textContent = "Login"
+    loginOut.href = "login.hmtl"
+}
+
+}
+LogOut()
