@@ -1,39 +1,42 @@
-const API_URL = "http://localhost:5678/api";
-const storageToken = localStorage.token;
+const API_BASE_URL = "http://localhost:5678/api";
 
-
-export function logApi(event) {
-    event.preventDefault(); // Empêche le comportement par défaut du formulaire
-
-    // Récupère les valeurs des champs email et mot de passe du formulaire
+async function logIn() {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
-    
-    //Data contenant les informations d'identification
-    const data = { email, password };
-    
-    // Envoie une requête POST à l'API avec les données d'identification
-    fetch(`${API_URL}/users/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-    })
-    .then(response => {
-        // Vérifie si la réponse est valide
+
+    // Vérification si email et mot de passe sont vides
+    if (!email || !password) {
+        alert("Veuillez fournir à la fois l'email et le mot de passe.");
+        return;
+    }
+
+    const data = {
+        email: email,
+        password: password
+    };
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/users/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
         if (!response.ok) {
-            throw new Error("Email ou mot de passe incorrect");
+            throw new Error("Email ou mot de passe incorrect.");
         }
-        return response.json();
-    })
-    .then(dataResponse => {
-        // Stocke le token dans le stockage local du navigateur
-        localStorage.setItem("token", dataResponse.token);
-        // Redirige l'utilisateur vers la page d'acceuil du site
-        window.location.href = "index.html";
-    })
-    .catch(error => {
-        // Gère les erreurs en affichant une alerte avec le message d'erreur
+
+        const responseData = await response.json();
+        localStorage.setItem("token", responseData.token);
+        window.location.href = "index.html"; // Redirige l'utilisateur vers la page d'accueil après la connexion réussie
+    } catch (error) {
         alert(error.message);
-    });
+    }
 }
 
+document.querySelector('#loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêche le formulaire de soumettre les données normalement
+    logIn(); // Appelle la fonction logIn() pour gérer l'authentification
+});
