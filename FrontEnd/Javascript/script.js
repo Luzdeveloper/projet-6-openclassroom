@@ -86,13 +86,23 @@ const filters = document.querySelector('.filters');
 //Fonction gestion du mode admin
 
 function gestionModeAdmin() {
+    
+    const loginLink = document.getElementById('LoginOut')
+
+    //Ajout de l'évènement au click
+
+    loginLink.addEventListener('click', function(){
+        window.location.href = 'login.html';
+    })
+
+
     if (token){
         //si le jeton est présent alors le mode admin se lance 
 
         adminHeader.style.display = "flex";
         editionLink.style.display = "flex";
         filters.style.display = "none";
-        logStatus.innerHTML="Logout"
+        loginLink.innerHTML="Logout"
         console.log("Connexion au mode administrateur reussi")
 } else {
     //sinon on désactive le mode 
@@ -100,14 +110,14 @@ function gestionModeAdmin() {
     adminHeader.style.display ="none"; 
     editionLink.style.display ="none";
     filters.style.display ="block";
-    logStatus.innerHTML = "Login";
+    loginLink.innerHTML = "Login";
     console.log("Déconnexion du mode administrateur")
 }
 }
 
 gestionModeAdmin()
 
-const logOutButton = document.querySelector('.logout');
+const logOutButton = document.querySelector('.loginOut');
 logOutButton?.addEventListener('click', () => {
     logOut()
     window.location.href= "index.html";

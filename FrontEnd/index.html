@@ -14,6 +14,8 @@
 	<script type="module" src="Javascript/login.js"></script>
 </head>
 <body>
+
+
 	<div class="editionMod">
 		<i class="fa-solid fa-pen-to-square"></i>
 		<p>Mode édition</p>
@@ -44,11 +46,23 @@
 	<section id="portfolio">
 		<section class="modifProjet">
 		<h2>Mes Projets</h2>
+
+	<aside class="modalesContainer">
+		<aside class="deleteModal modale">
+			<h3>Gallerie Photo</h3>
+		</aside>
+		<aside class="addModal modale">
+			<h3>Ajoutez des photos</h3>
+			<input type="file" name="file" id="file">
+			<button class="addPicture">Ajoutez une photo</button>
+		</aside>
+	</div>
+
 			<div class="elementlink">
 				<p class="modif">Modifier</p>
 			</div>
 		</section>
-		<div class="filters"></div>
+		<div class="filters active"></div>
 		<div class="gallery">
 		</div>
 	</section>
