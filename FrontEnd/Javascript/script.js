@@ -86,39 +86,52 @@ const filters = document.querySelector('.filters');
 //Fonction gestion du mode admin
 
 function gestionModeAdmin() {
-    
-    const loginLink = document.getElementById('LoginOut')
+    const loginLink = document.getElementById('LoginOut');
+
+    // Mettre à jour le lien de connexion/logout
+    function updateLoginStatus() {
+        if (localStorage.getItem("token")) {
+            // Si l'utilisateur est connecté
+            loginLink.innerHTML = "Logout";
+        } else {
+            // Si l'utilisateur n'est pas connecté
+            loginLink.innerHTML = "Login";
+        }
+    }
 
     //Ajout de l'évènement au click
-
     loginLink.addEventListener('click', function(){
-        window.location.href = 'login.html';
-    })
+        if (localStorage.getItem("token")) {
+            // Si l'utilisateur est connecté, déconnectez-le
+            logOut();
+        } else {
+            // Si l'utilisateur n'est pas connecté, redirigez-le vers la page de connexion
+            window.location.href = 'login.html';
+        }
+    });
 
+    // Appeler la fonction pour mettre à jour le statut de connexion au chargement de la page
+    updateLoginStatus();
 
-    if (token){
+    if (localStorage.getItem("token")) {
         //si le jeton est présent alors le mode admin se lance 
-
         adminHeader.style.display = "flex";
         editionLink.style.display = "flex";
         filters.style.display = "none";
-        loginLink.innerHTML="Logout"
-        console.log("Connexion au mode administrateur reussi")
-} else {
-    //sinon on désactive le mode 
-
-    adminHeader.style.display ="none"; 
-    editionLink.style.display ="none";
-    filters.style.display ="block";
-    loginLink.innerHTML = "Login";
-    console.log("Déconnexion du mode administrateur")
-}
+        console.log("Connexion au mode administrateur reussi");
+    } else {
+        //sinon on désactive le mode 
+        adminHeader.style.display ="none"; 
+        editionLink.style.display ="none";
+        filters.style.display ="block";
+        console.log("Déconnexion du mode administrateur");
+    }
 }
 
-gestionModeAdmin()
+gestionModeAdmin();
 
 const logOutButton = document.querySelector('.loginOut');
 logOutButton?.addEventListener('click', () => {
-    logOut()
+    logOut();
     window.location.href= "index.html";
-})
+});
