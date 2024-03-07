@@ -195,10 +195,11 @@ footer nav ul {
 
 /* css des boutons de filtres */
 
-.filters {
+.filter {
     display: flex; 
     justify-content: center; 
     flex-wrap: wrap; 
+	align-items: center;
 }
 
 .filterButton {
@@ -318,7 +319,7 @@ footer nav ul {
 
   .elementLink{
 	display: flex;
-	/* display: none; */
+	display: none;
 	gap: 10px;
   }
 
@@ -345,12 +346,9 @@ footer nav ul {
   /*Modales*/
 
   .modalDelete {
-	/* display: none; */
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
+	display: none;
+	width: 35%;
+	height: 35%;
 	background-color: rgb(0, 0, 0, 0.8);
 	justify-content: center;
 	align-items: center;
@@ -367,14 +365,14 @@ footer nav ul {
 	border-radius: 10px;
   }
 
-  .modalContainer .closs-cross i {
+  .modalContainer .close-cross i {
 	display: flex;
 	justify-content: flex-end;
 	cursor: pointer;
 	font-size: 21px;
   }
 
-  .modalContainerp p{
+  .modalContainer p{
 	color: #000;
 	text-align: center;
 	font-family: "Work Sans";
@@ -386,7 +384,7 @@ footer nav ul {
 	cursor: context-menu;
   }
 
-  .modalContainer .closs-cross {
+  .modalContainer .close-cross {
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
@@ -454,7 +452,7 @@ footer nav ul {
   }
   
   .addModal {
-	/* display: none; */
+	display: none;
 	position: fixed;
 	width: 100%;
 	height: 100%;
