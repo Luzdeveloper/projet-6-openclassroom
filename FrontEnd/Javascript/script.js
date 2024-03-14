@@ -241,7 +241,7 @@ async function addWork(formDAta) {
 }
 
 const addPhotoButton = document.querySelector('.addPhoto-btn');
-const addPhotoForm = document.querySelector ('.addModal form [name = "addPhotoForm"]');
+const addPhotoForm = document.querySelector('#addModal form');
 
 addPhotoButton.addEventListener('click', () => {
     const fileInput = document.querySelector('#new-pictures');
