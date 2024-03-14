@@ -255,15 +255,3 @@ addPhotoForm.addEventListener('submit', async (event) => {
     await addWork(formData)
 })
 
-const validButton = document.querySelector('.submitBtn');
-
-validButton.addEventListener('click', async() => {
-    const addPhotoForm = document.querySelector ('.addModal form [name = "addPhotoForm"]');
-    const formData = new FormData(addPhotoForm);
-    if (formData.get('imgTitle') === '' || formData.get('imgCategory') === '') {
-        alert('Tous les champs obligatoire ne sont pas remplis');
-        return;
-    }
-    await addWork(formData);
-    addPhotoForm.reset();
-})
