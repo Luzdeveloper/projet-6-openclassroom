@@ -167,7 +167,7 @@ function displayWorksInModal(works) {
     const gallery = document.querySelector('.galleryPreview');
     gallery.innerHTML = works.map(work => `
       <figure>
-        <img src="${work.imageUrl}" class"miniature">
+        <img src="${work.imageUrl}">
         <i class="fa-solid fa-trash" data-id="${work.id}"></i>
       </figure>
     `).join('');
