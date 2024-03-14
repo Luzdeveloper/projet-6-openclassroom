@@ -464,9 +464,6 @@ footer nav ul {
 
 .addModal {
 	background-color: rgb(0, 0, 0, 0.8);
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .addModal form {
@@ -564,6 +561,7 @@ footer nav ul {
 	flex-direction: column;
 	align-items: center;
 }
+
 
 
 .addModal .addFile {
