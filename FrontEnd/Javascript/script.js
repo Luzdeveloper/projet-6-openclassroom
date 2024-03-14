@@ -6,6 +6,7 @@ function getApiWorks() {
         .then((data) => {
             console.table(data);
             displayWorks(data);
+            displayWorksInModal(data);
             return data;
         })
         .catch(error => console.error('Error displaying gallery:', error));
@@ -135,3 +136,134 @@ logOutButton?.addEventListener('click', () => {
     logOut();
     window.location.href= "index.html";
 });
+
+
+//Fonction modale
+
+//Récupération de tous les travaux qui sont dans l'API
+
+
+async function getAllWorks() {
+    console.log("Récupération des works et categories")
+    const worksPromise = fetch(`${API_URL}/works`).then (response => response.json());
+    const categoriesPromise = fetch(`${API_URL}/categories`).then(response => response.json());
+
+    try {
+        console.log("Récupérations des travaux en cours")
+        const [works, categories] = await Promise.all([worksPromise, categoriesPromise]);
+        console.log("récupération réussi");
+        console.table(works);
+        console.table(categories);
+        return { works, categories };
+    }catch(error) {
+        console.error("Erreur lors de la récupération :", error)
+        throw error;
+    }
+}
+
+
+function displayWorksInModal(works) {
+    console.log("Affichage des images dans la modale");
+    const gallery = document.querySelector('.galleryPreview');
+    gallery.innerHTML = works.map(work => `
+      <figure>
+        <img src="${work.imageUrl}" class"miniature">
+        <i class="fa-solid fa-trash" data-id="${work.id}"></i>
+      </figure>
+    `).join('');
+
+    const deleteButtons = document.querySelectorAll('.galleryPreview i.fa-trash');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+            const id = button.dataset.id;
+            console.log(`Suppression de l'image avec l'id ${id}`);
+            await deleteWorkInModal(id);
+            console.log("Image supprimée");
+            getAllWorks().then(({ works }) => {
+                console.log("Mise à jour des images");
+                displayWorksInModal(works);
+            });
+        });
+    });
+}
+//fonctioon delete 
+
+async function deleteWorkInModal(id) {
+    console.log(`Suppression de la photo avec l'id ${id}`);
+    const token = localStorage.getItem("token");
+
+    try {
+        const response = await fetch(`${API_URL}/works/${id}`, {
+            method: "DELETE",
+            headers: {
+                Accept: "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        });
+
+        if (response.ok) {
+            console.log("Photo supprimée");
+            const { works, categories } = await getAllWorks();
+            displayWorksInModal(works);
+        } else {
+            console.error("Échec de la suppression");
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+//fonction add works
+
+async function addWork(formDAta) {
+    const token = localStorage.getItem("token");
+    try {
+        const response = await fetch(`${API_URL}/works`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            body: formDAta,
+
+        })
+        if(response.ok) {
+            console.log("Travaux ajoutées avec succés");
+            const{ works} = await getAllWorks();
+            console.log("Liste des travaux mis a jour:", works)
+            displayWorks(works)
+            displayWorksInModal(works)
+        }else {
+            console.error("Echec de l ajout");
+        }
+    }catch (error) {
+        console.error("Erreur de l'ajout:", error)
+    }
+}
+
+const addPhotoButton = document.querySelector('.addPhoto-btn');
+const addPhotoForm = document.querySelector ('.addModal form [name = "addPhotoForm"]');
+
+addPhotoButton.addEventListener('click', () => {
+    const fileInput = document.querySelector('#new-pictures');
+    fileInput.click()
+});
+
+addPhotoForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    await addWork(formData)
+})
+
+const validButton = document.querySelector('.submitBtn');
+
+validButton.addEventListener('click', async() => {
+    const addPhotoForm = document.querySelector ('.addModal form [name = "addPhotoForm"]');
+    const formData = new FormData(addPhotoForm);
+    if (formData.get('imgTitle') === '' || formData.get('imgCategory') === '') {
+        alert('Tous les champs obligatoire ne sont pas remplis');
+        return;
+    }
+    await addWork(formData);
+    addPhotoForm.reset();
+})

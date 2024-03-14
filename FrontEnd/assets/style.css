@@ -3,19 +3,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -23,46 +91,68 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 /** end reset css**/
 body {
 	max-width: 1140px;
-	margin:auto;
-	font-family: 'Work Sans' ;
+	margin: auto;
+	font-family: 'Work Sans';
 	font-size: 14px;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
 }
+
 section {
 	margin: 50px 0
 }
 
-h1{
+h1 {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Syne';
@@ -71,27 +161,29 @@ h1{
 	color: #B1663C
 }
 
-h1 > span {
+h1>span {
 	font-family: 'Work Sans';
-	font-size:10px;
+	font-size: 10px;
 	letter-spacing: 0.1em;
-;
+	;
 }
 
-h2{
+h2 {
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
 	color: #1D6154;
-	
+
 }
+
 nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-	
+
 
 }
+
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
@@ -107,9 +199,11 @@ li:hover {
 	display: flex;
 	align-items: center;
 }
+
 #introduction figure {
 	flex: 1
 }
+
 #introduction img {
 	display: block;
 	margin: auto;
@@ -119,6 +213,7 @@ li:hover {
 #introduction article {
 	flex: 1
 }
+
 #introduction h2 {
 	margin-bottom: 1em;
 }
@@ -126,10 +221,12 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -144,20 +241,24 @@ li:hover {
 	width: 100%;
 
 }
+
 #contact {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
-#contact > * {
+
+#contact>* {
 	text-align: center;
 
 }
-#contact h2{
+
+#contact h2 {
 	margin-bottom: 20px;
 }
+
 #contact form {
 	text-align: left;
-	margin-top:30px;
+	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
 }
@@ -168,23 +269,25 @@ margin: auto;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
 #contact label {
 	margin: 2em 0 1em 0;
 }
+
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
+input[type="submit"] {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
-	margin : 2em auto ;
+	margin: 2em auto;
 	width: 180px;
 	text-align: center;
-	border-radius: 60px ;
+	border-radius: 60px;
 }
 
 footer nav ul {
@@ -196,30 +299,30 @@ footer nav ul {
 /* css des boutons de filtres */
 
 .filter {
-    display: flex; 
-    justify-content: center; 
-    flex-wrap: wrap; 
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
 	align-items: center;
 }
 
 .filterButton {
-    width: 150px; 
-    height: 37px; 
-    border-radius: 60px; 
-    border: 1px solid black; 
-    background-color: #ffffff; 
-    color: #000000; 
-    font-size: 16px; 
-    font-weight: bold; 
-    text-align: center; 
-    cursor: pointer; 
-    margin: 5px; 
-    transition: background-color 0.3s; 
+	width: 150px;
+	height: 37px;
+	border-radius: 60px;
+	border: 1px solid black;
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+	margin: 5px;
+	transition: background-color 0.3s;
 }
 
-.filterbutton:hover {
-    background-color: #1D6154; 
-	
+.filterbutton.selected {
+	background-color: #1D6154;
+
 	color: white;
 }
 
@@ -231,37 +334,37 @@ footer nav ul {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-  }
-  
-  #login > * {
+}
+
+#login>* {
 	text-align: center;
-  }
-  
-  #login h2 {
+}
+
+#login h2 {
 	margin-bottom: 20px;
-  }
-  
-  #login form {
+}
+
+#login form {
 	text-align: left;
 	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-  }
-  
-  #login input {
+}
+
+#login input {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	cursor: pointer;
-  }
-  
-  #login label {
+}
+
+#login label {
 	margin: 2em 0 1em 0;
-  }
-  
-  #login a {
+}
+
+#login a {
 	color: #3d3d3d;
 	font-family: Work Sans;
 	font-size: 14px;
@@ -271,11 +374,9 @@ footer nav ul {
 	text-decoration: none;
 	margin-bottom: 70px;
 	text-decoration-line: underline;
-  }
+}
 
-  /* style mode admin */
-
-  .editionMod {
+* Admin mode styles */ .editionMod {
 	background-color: black;
 	width: 100%;
 	display: flex;
@@ -285,51 +386,38 @@ footer nav ul {
 	padding-bottom: 15px;
 	align-items: center;
 	display: none;
-  }
-  
-  .editionMod p {
+}
+
+.editionMod p {
 	color: white;
 	font-family: "Work Sans";
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
-  }
-  
-  .editionMod .fa-solid {
+}
+
+.editionMod .fa-solid {
 	color: white;
 	width: 15.58px;
 	height: 15.58px;
 	flex-shrink: 0;
-  }
+}
 
-  /*lien modifier */
-
-  #portfolio {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0px;
-	padding-bottom: 50px;
-  }
-
-  #portfolio h2 {
-	margin-right: 20px;
-  }
-
-  .elementLink{
+/* Modifier link styles */
+.elementLink {
 	display: flex;
 	display: none;
 	gap: 10px;
-  }
+}
 
-  .elementLink .fa-solid{
+.elementLink .fa-solid {
 	color: black;
 	width: 16px;
 	height: 16px;
-  }
+}
 
-  .elementLink .modif{
+.elementLink .modif {
 	color: #000;
 	text-align: center;
 	font-family: "Work Sans";
@@ -337,42 +425,49 @@ footer nav ul {
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
-  }
+}
 
-  .elementLink .modif{
+.elementLink .modif {
 	cursor: pointer;
-  }
+}
 
-  /*Modales*/
-
-  .modalDelete {
+/* Modal styles */
+.modalDelete {
 	display: none;
-	width: 35%;
-	height: 35%;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
 	background-color: rgb(0, 0, 0, 0.8);
 	justify-content: center;
 	align-items: center;
-  }
+}
 
-  .modalContainer {
+.modalContainer {
 	padding: 15px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: white;
-	width: 100%;
-	height: 100%;
 	border-radius: 10px;
-  }
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	position: relative;
+	max-width: 80%;
+	max-height: 80%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 
-  .modalContainer .close-cross i {
+.modalContainer .close-cross i {
 	display: flex;
 	justify-content: flex-end;
 	cursor: pointer;
 	font-size: 21px;
-  }
+}
 
-  .modalContainer p{
+.modalContainer p {
 	color: #000;
 	text-align: center;
 	font-family: "Work Sans";
@@ -382,20 +477,20 @@ footer nav ul {
 	line-height: normal;
 	margin-bottom: 40px;
 	cursor: context-menu;
-  }
+}
 
-  .modalContainer .close-cross {
+.modalContainer .close-cross {
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
-  }
+}
 
-  .modalContainer button {
+.modalContainer button {
 	font-family: "Syne";
 	font-weight: 700;
 	color: white;
 	background-color: #1d6154;
-	margin:  2em auto;
+	margin: 2em auto;
 	width: 180px;
 	text-align: center;
 	border-radius: 60px;
@@ -405,9 +500,9 @@ footer nav ul {
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-  }
+}
 
-  .galleryPreview {
+.galleryPreview {
 	display: flex;
 	width: 400px;
 	height: 400px;
@@ -416,25 +511,24 @@ footer nav ul {
 	border-bottom: solid;
 	border-color: #b3b3b3;
 	margin-bottom: 20px;
-  }
+}
 
-  .galleryPreview figure{
+.galleryPreview figure {
 	max-width: 100%;
 	max-height: 100%;
 	display: grid;
 	grid-template-columns: 80% 1fr;
 	grid-template-rows: 1fr;
-  }
+}
 
-  .gallery figure img {
+.gallery figure img {
 	max-width: 100%;
 	max-height: 100%;
 	grid-area: 1/1/2/2;
 	z-index: 1;
-  }
+}
 
-  
-  .elementLink .galleryPreview figure .fa-solid {
+.elementLink .galleryPreview figure .fa-solid {
 	position: relative;
 	width: 9px;
 	height: 11px;
@@ -449,9 +543,9 @@ footer nav ul {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-  }
-  
-  .addModal {
+}
+
+.addModal {
 	display: none;
 	position: fixed;
 	width: 100%;
@@ -461,81 +555,81 @@ footer nav ul {
 	background-color: rgb(0, 0, 0, 0.8);
 	justify-content: center;
 	align-items: center;
-  }
-  
-  .addModal form {
+}
+
+.addModal form {
 	display: flex;
 	flex-direction: column;
 	width: 80%;
 	gap: 15px;
 	align-items: center;
-  }
-  
-  .addModal .addFile {
+}
+
+.addModal .addFile {
 	display: flex;
 	flex-direction: column;
 	background-color: aliceblue;
 	align-items: center;
 	width: 80%;
 	margin-bottom: 30px;
-  }
-  
-  .addModal .addFile .fa-regular {
+}
+
+.addModal .addFile .fa-regular {
 	color: #b9c5cc;
 	font-size: 76px;
 	padding-top: 20px;
 	padding-bottom: 15px;
-  }
-  
-  .addModal .addFile input {
+}
+
+.addModal .addFile input {
 	padding-bottom: 10px;
-  }
-  
-  .addModal form input {
+}
+
+.addModal form input {
 	height: 30px;
 	margin: 0px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-  }
-  
-  .addModal form select {
+}
+
+.addModal form select {
 	height: 40px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-  }
-  
-  .addModal .close-arrow {
+}
+
+.addModal .close-arrow {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
 	padding-bottom: 15px;
-  }
-  
-  .addModal .close-arrow #arrowReturn {
+}
+
+.addModal .close-arrow #arrowReturn {
 	font-size: 21px;
 	cursor: pointer;
-  }
-  
-  .addModal .addFile p {
+}
+
+.addModal .addFile p {
 	font-size: 10px;
 	padding-bottom: 10px;
 	margin-bottom: 0px;
 	padding-top: 5px;
-  }
-  
-  .addModal form label {
+}
+
+.addModal form label {
 	font-family: "Work Sans";
 	font-size: 14px;
-  }
-  
-  .addModal .addFile #new-pictures {
+}
+
+.addModal .addFile #new-pictures {
 	display: none;
-  }
-  
-  .addModal .addFile .addPhoto-btn {
+}
+
+.addModal .addFile .addPhoto-btn {
 	background-color: #cbd6dc;
 	color: #306685;
 	font-family: "Work Sans";
@@ -543,17 +637,17 @@ footer nav ul {
 	border: none;
 	height: 40px;
 	margin: 0px;
-  }
-  
-  .addModal form #imgTitle {
+}
+
+.addModal form #imgTitle {
 	width: 100%;
-  }
-  
-  .addModal form #imgCategory {
+}
+
+.addModal form #imgCat {
 	width: 100%;
-  }
-  
-  .addModal form .imgCategory {
+}
+
+.addModal form .imgCategory {
 	display: flex;
 	flex-direction: column;
 	width: 80%;
@@ -562,24 +656,24 @@ footer nav ul {
 	border-bottom: solid 2px;
 	border-color: #b3b3b3;
 	margin-bottom: 20px;
-  }
-  
-  .addModal form .inputAdd {
+}
+
+.addModal form .inputAdd {
 	display: flex;
 	flex-direction: column;
 	width: 80%;
 	gap: 15px;
 	padding-bottom: 15px;
-  }
-  
-  .addFile #imagePreview {
+}
+
+.addFile #imagePreview {
 	display: none;
 	width: 155px;
 	margin-bottom: 20px;
-  }
-  
-  .addFile #imagePreview img {
+}
+
+.addFile #imagePreview img {
 	width: 100%;
 	height: auto;
 	display: block;
-  }
+}
