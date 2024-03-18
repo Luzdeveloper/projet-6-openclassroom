@@ -215,8 +215,21 @@ async function deleteWorkInModal(id) {
 
 //fonction add works
 
-async function addWork(formDAta) {
+async function addWork(event) {
+    event.preventDefault();
+
     const token = localStorage.getItem("token");
+    const addWork = document.getElementById('.galleryPreview').files[0];
+    console.log("addWork:", addWork)
+    if (!addWork){
+        alert ("Veuillez sélectionner une image");
+        return;
+    }
+
+    const formDAta = new FormData();
+    formDAta.append("image", addWork);
+    formDAta.append("title", document.getElementById('imgTitle').value);
+    formDAta.append("category", document.getElementById('imgCategory').value)
     try {
         const response = await fetch(`${API_URL}/works`, {
             method: "POST",
@@ -228,7 +241,7 @@ async function addWork(formDAta) {
         })
         if(response.ok) {
             console.log("Travaux ajoutées avec succés");
-            const{ works} = await getAllWorks();
+            const works = await getAllWorks();
             console.log("Liste des travaux mis a jour:", works)
             displayWorks(works)
             displayWorksInModal(works)
