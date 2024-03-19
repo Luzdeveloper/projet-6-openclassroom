@@ -121,8 +121,8 @@ function gestionModeAdmin() {
 
   if (localStorage.getItem("token")) {
     //si le jeton est présent alors le mode admin se lance
-    adminHeader.style.display = "block";
-    editionLink.style.display = "block";
+    adminHeader.style.display = "flex";
+    editionLink.style.display = "flex";
     filters.style.display = "none";
   } else {
     //sinon on désactive le mode
