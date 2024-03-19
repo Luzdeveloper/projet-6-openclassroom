@@ -121,8 +121,8 @@ function gestionModeAdmin() {
 
   if (localStorage.getItem("token")) {
     //si le jeton est présent alors le mode admin se lance
-    adminHeader.style.display = "flex";
-    editionLink.style.display = "flex";
+    adminHeader.style.display = "block";
+    editionLink.style.display = "block";
     filters.style.display = "none";
   } else {
     //sinon on désactive le mode
@@ -177,13 +177,13 @@ function displayWorksInModal(works) {
       (work) => `
       <figure>
         <img src="${work.imageUrl}">
-        <i class="fa-solid fa-trash" data-id="${work.id}"></i>
+        <i class="fa-regular fa-trash-can" data-id="${work.id}"></i>
       </figure>
     `
     )
     .join("");
 
-  const deleteButtons = document.querySelectorAll(".galleryPreview i.fa-trash");
+  const deleteButtons = document.querySelectorAll(".galleryPreview i.fa-trash-can");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", async () => {
       const id = button.dataset.id;
