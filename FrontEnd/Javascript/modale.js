@@ -1,36 +1,52 @@
 const API_URL = "http://localhost:5678/api";
 
+const modifierBtn = document.querySelector(".modif");
+const modal = document.querySelector(".modalDelete");
+const modalContainer = document.querySelector(".modalContainer");
+const modalContainerAdd = document.querySelector(".modalContainerAdd");
+const crossIcons = document.querySelectorAll(".crossIcon");
+
+const addPhotoBtn = modal.querySelector(".addPhotobtn");
+const addPhotoBtn2 = modal.querySelector(".addPhoto-btn");
+
+const addModal = document.querySelector(".addModal");
+const addPhotoForm = modal.querySelector("#addphotoform");
+
+const backBtn = addModal.querySelector(".back-arrow");
+
 // affichez modal
-const modifierBtns = document.querySelectorAll('.modif')
-modifierBtns.forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    const modal = this.parentElement.querySelector('.modalDelete');
-    modal.style.display = 'block';
-    const addPhotoBtn = modal.querySelector('.addPhotobtn');
-    addPhotoBtn.addEventListener('click', function() {
-      modal.style.display = 'none';
-      const addModal = document.querySelector('.addModal');
-      addModal.style.display = 'block';
-      const backBtn = addModal.querySelector('.back-arrow');
-      backBtn.addEventListener('click', function() {
-        addModal.style.display = 'none';
-        modal.style.display = 'block';
-      });
-    });
+modifierBtn.addEventListener("click", function (event) {
+  event.stopPropagation();
+  modal.style.display = "block";
+});
 
-    // Ajoutez un écouteur d'événements sur le bouton de fermeture du modal
-    const closeBtns = modal.querySelectorAll('.crossIcon, .closeCross');
-    closeBtns.forEach(function(closeBtn) {
-      closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-      });
-    });
+addPhotoBtn.addEventListener("click", function () {
+  modal.style.display = "none";
+  addModal.style.display = "block";
+});
 
-    // Ajoutez un écouteur d'événements sur le document pour masquer le modal lorsque vous cliquez en dehors du modal
-    document.addEventListener('click', function(event) {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
+backBtn.addEventListener("click", function () {
+  modal.style.display = "block";
+  addModal.style.display = "none";
+});
+
+// Fermetures modales clic document
+
+modalContainer.addEventListener("click", function (event) {
+  event.stopPropagation();
+});
+modalContainerAdd.addEventListener("click", function (event) {
+  event.stopPropagation();
+});
+
+document.addEventListener("click", function () {
+  modal.style.display = "none";
+  addModal.style.display = "none";
+});
+
+crossIcons.forEach((crossIcon) => {
+  crossIcon.addEventListener("click", function () {
+    modal.style.display = "none";
+    addModal.style.display = "none";
   });
 });
