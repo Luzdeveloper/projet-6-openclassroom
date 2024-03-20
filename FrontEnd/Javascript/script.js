@@ -278,3 +278,34 @@ addPhotoForm.addEventListener("submit", async (event) => {
   const formData = new FormData(event.target);
   await addWork(formData);
 });
+
+
+//affichage de la miniature modale post 
+
+const submit = document.querySelector('.submitBtn');
+const newPicturesBtn = document.getElementById("new-pictures");
+const imgPreview = document.getElementById("imagePreview");
+const logoImg = document.querySelector(".logoImage");
+const buttonAdd = document.querySelector(".addPhoto-btn");
+const formatImg = document.querySelector(".formatImg");
+
+newPicturesBtn.addEventListener("change", function(event) {
+  getImgData(event);
+});
+
+function getImgData(event) {
+  const files = event.target.files;
+
+  if (files.length > 0) {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(files[0]);
+
+    fileReader.addEventListener("load", function() {
+      formatImg.style.display = "none";
+      buttonAdd.style.display = "none";
+      logoImg.style.display = "none";
+      imgPreview.style.display = "block";
+      imgPreview.innerHTML = `<img src="${this.result}" alt="Preview"/>`;
+    });
+  }
+}
