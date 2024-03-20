@@ -177,13 +177,13 @@ function displayWorksInModal(works) {
       (work) => `
       <figure>
         <img src="${work.imageUrl}">
-        <i class="fa-solid fa-trash" data-id="${work.id}"></i>
+        <i class="fa-regular fa-trash-can" data-id="${work.id}"></i>
       </figure>
     `
     )
     .join("");
 
-  const deleteButtons = document.querySelectorAll(".galleryPreview i.fa-trash");
+  const deleteButtons = document.querySelectorAll(".galleryPreview i.fa-trash-can");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", async () => {
       const id = button.dataset.id;
