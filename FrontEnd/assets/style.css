@@ -471,7 +471,7 @@ div.elementLink {
   align-items: center;
 }
 
-.modalContainer {
+.modalContainer,.modalContainerAdd {
   width: 630px;
   min-height: 688px;
   padding: 15px;
@@ -489,7 +489,7 @@ div.elementLink {
   transform: translate(-50%, -50%);
 }
 
-.modalContainerAdd {
+/* .modalContainerAdd {
   width: 630px;
   min-height: 670px;
   padding: 15px;
@@ -505,7 +505,7 @@ div.elementLink {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .addModal {
   background-color: rgb(0, 0, 0, 0.8);

@@ -78,43 +78,43 @@
           </div>
         </aside>
         <aside class="addModal">
-          <form name="addphotoForm" id="addphotoForm"></form>
-          <div class="modalContainerAdd">
+          <div class="modalContainer">
             <div class="closeCross">
               <i class="fa-solid fa-arrow-left back-arrow"></i>
               <i class="fa-solid fa-xmark crossIcon"></i>
             </div>
-            <p>Ajout photo</p>
-            <div class="addFile">
-              <i class="fa-regular fa-image logoImage"></i>
-              <div id="imagePreview"></div>
-              <button class="addPhoto-btn">Ajouter photo</button>
-              <input
-                type="file"
-                id="new-pictures"
-                name="image"
-                accept="image/png, image/jpeg"
-                required
-              />
-              <p class="formatImg">jpg, png: 4mo max</p>
-            </div>
-            <div class="inputAdd">
-              <label for="imgTitle">Titre</label>
-              <input type="text" name="imgTitle" id="imgTitle" required />
-            </div>
-            <div class="imgCategory">
-              <label for="imgCategory">Categorie</label>
-              <select name="imgCategory" id="imgCat" required>
-                <option value="" label="choisissez la catégorie"></option>
-                <option value="1" label="Objets"></option>
-                <option value="2" label="Appartements"></option>
-                <option value="3" label="Hôtels & Restaurants"></option>
-              </select>
+            <form name="addphotoForm" id="addphotoForm">
+              <p>Ajout photo</p>
+              <div class="addFile">
+                <i class="fa-regular fa-image logoImage"></i>
+                <div id="imagePreview"></div>
+                <button class="addPhoto-btn">Ajouter photo</button>
+                <input
+                  type="file"
+                  id="new-pictures"
+                  name="image"
+                  accept="image/png, image/jpeg"
+                  required
+                />
+                <p class="formatImg">jpg, png: 4mo max</p>
+              </div>
+              <div class="inputAdd">
+                <label for="imgTitle">Titre</label>
+                <input type="text" name="imgTitle" id="imgTitle" required />
+              </div>
+              <div class="imgCategory">
+                <label for="imgCategory">Categorie</label>
+                <select name="imgCategory" id="imgCat" required>
+                  <option value="" label="choisissez la catégorie"></option>
+                  <option value="1" label="Objets"></option>
+                  <option value="2" label="Appartements"></option>
+                  <option value="3" label="Hôtels & Restaurants"></option>
+                </select>
+              </div>
               <input type="submit" value="Valider" class="submitBtn" />
-            </div>
+            </form>
           </div>
         </aside>
-
         <div class="filters"></div>
         <div class="gallery"></div>
       </section>
