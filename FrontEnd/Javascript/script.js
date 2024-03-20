@@ -177,7 +177,7 @@ function displayWorksInModal(works) {
       (work) => `
       <figure>
         <img src="${work.imageUrl}">
-        <i class="fa-regular fa-trash-can" data-id="${work.id}"></i>
+        <i class="fa-regular fa-trash-can poubsupp" data-id="${work.id}"></i>
       </figure>
     `
     )
