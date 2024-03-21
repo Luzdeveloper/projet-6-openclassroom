@@ -40,7 +40,6 @@ function displayWorks(works) {
 
 function displayCategories(categories) {
   const filters = document.querySelector(".filters");
-  //   console.log(categories);
 
   // Créer le bouton "Tous"
   const allButton = document.createElement("button");
@@ -50,6 +49,15 @@ function displayCategories(categories) {
 
   allButton.addEventListener("click", function () {
     // Lorsque le bouton "Tous" est cliqué, afficher tous les travaux
+    // Supprimer la classe "active" de tous les boutons
+    const activeButtons = document.querySelectorAll(".filterButton.active");
+    activeButtons.forEach((activeButton) => {
+      activeButton.classList.remove("active");
+    });
+
+    // Ajouter la classe "active" au bouton "Tous"
+    allButton.classList.add("active");
+
     getApiWorks().then((works) => {
       console.table(works);
       displayWorks(works);
@@ -65,6 +73,15 @@ function displayCategories(categories) {
     filters.appendChild(button);
 
     button.addEventListener("click", function () {
+      // Supprimer la classe "active" de tous les boutons
+      const activeButtons = document.querySelectorAll(".filterButton.active");
+      activeButtons.forEach((activeButton) => {
+        activeButton.classList.remove("active");
+      });
+
+      // Ajouter la classe "active" au bouton sélectionné
+      button.classList.add("active");
+
       getApiWorks().then((works) => {
         const filteredWorks = works.filter(
           (work) => work.categoryId === category.id
@@ -75,6 +92,7 @@ function displayCategories(categories) {
     });
   });
 }
+
 
 // Fonction Logout
 
@@ -128,7 +146,7 @@ function gestionModeAdmin() {
     //sinon on désactive le mode
     adminHeader.style.display = "none";
     editionLink.style.display = "none";
-    filters.style.display = "block";
+    filters.style.display = "flex";
     console.log("Déconnexion du mode administrateur");
   }
 }
@@ -309,3 +327,16 @@ function getImgData(event) {
     });
   }
 }
+
+// gere la navigation des menus
+
+document.querySelectorAll('.nav-link').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const sectionId = event.target.dataset.sectionId;
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
