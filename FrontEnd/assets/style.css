@@ -299,6 +299,7 @@ footer nav ul {
 }
 
 .filterButton {
+  font-family: "Syne";
   width: 17%;
   height: 37px;
   border-radius: 60px;
@@ -658,6 +659,7 @@ div.elementLink {
   font-size: 1.2em;
   border: none;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  cursor: pointer;
 }
 
 .addModal form select {

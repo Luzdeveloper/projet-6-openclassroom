@@ -10,18 +10,19 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="Javascript/login.js"></script>
+	<script type="module" src="Javascript/script.js"></script>
 </head>
 <body>
     <header>
         <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-        <nav>
-            <ul>
-                <li>projets</li>
-                <li>contact</li>
-                <a href="login.html">login</a>
-                <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-            </ul>
-        </nav>
+		<nav>
+			<ul>
+			  <li><span class="nav-link" data-section-id="portfolio">projets</span></li>
+			  <li><span class="nav-link" data-section-id="contact">contact</span></li>
+			  <li id="LoginOut">Login</li>
+			  <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+			</ul>
+		  </nav>
     </header>
     <main>
 	<section id="login">
@@ -36,10 +37,6 @@
 		<a href="#">Mot de passe oublié</a>
 	</section>
     </main>
-</body>
-</html>
-
-
 <footer>
 	<nav>
 		<ul>
