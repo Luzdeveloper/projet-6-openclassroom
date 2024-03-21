@@ -322,7 +322,7 @@ function getImgData(event) {
       formatImg.style.display = "none";
       buttonAdd.style.display = "none";
       logoImg.style.display = "none";
-      imgPreview.style.display = "block";
+      imgPreview.style.display = "flex";
       imgPreview.innerHTML = `<img src="${this.result}" alt="Preview"/>`;
     });
   }

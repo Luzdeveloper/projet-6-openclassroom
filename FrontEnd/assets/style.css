@@ -449,10 +449,16 @@ div.elementLink {
 .fa-trash-can{
   color: white;
   cursor: pointer;
+  z-index: 1;
   position: relative;
   top: 5px;
   margin-left: -17px;
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  padding-right: 0px;
+  margin-right: 15px;
   background-color: #000;
   width: 17px;
   height: 17px;
@@ -460,6 +466,7 @@ div.elementLink {
   align-items: center;
   justify-content: center;
   border-radius: 3px;
+  padding: 1.5px;
 }
 .modalDelete,
 .addModal {
@@ -691,15 +698,18 @@ div.elementLink {
 
 .addModal .addFile .addPhoto-btn {
   background-color: #cbd6dc;
-    /* color: #306685; */
-    font-family: "Work Sans";
-    font-size: 14px;
-    height: 40px;
-    margin: 0px;
-    /* box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09); */
-    cursor: pointer;
-    border-radius: 60px;
-    text-align: center;
+  color: #306685;
+  font-family: "Work Sans";
+  font-size: 14px;
+  height: 40px;
+  margin: 0px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  cursor: pointer;
+  border-radius: 60px;
+  text-align: center;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .addModal form #imgTitle {
@@ -733,12 +743,14 @@ div.elementLink {
   display: none;
   width: 155px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .addFile #imagePreview img {
   width: 100%;
   height: auto;
   display: block;
+
 }
 
 .poubsupp{
