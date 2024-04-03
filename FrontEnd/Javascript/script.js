@@ -211,6 +211,7 @@ function displayWorksInModal(works) {
       getAllWorks().then(({ works }) => {
         console.log("Mise à jour des images");
         displayWorksInModal(works);
+        displayWorks(works);
       });
     });
   });
