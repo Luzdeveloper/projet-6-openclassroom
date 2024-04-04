@@ -93,7 +93,6 @@ function displayCategories(categories) {
   });
 }
 
-
 // Fonction Logout
 
 function logOut() {
@@ -201,7 +200,9 @@ function displayWorksInModal(works) {
     )
     .join("");
 
-  const deleteButtons = document.querySelectorAll(".galleryPreview i.fa-trash-can");
+  const deleteButtons = document.querySelectorAll(
+    ".galleryPreview i.fa-trash-can"
+  );
   deleteButtons.forEach((button) => {
     button.addEventListener("click", async () => {
       const id = button.dataset.id;
@@ -232,9 +233,7 @@ async function deleteWorkInModal(id) {
     });
 
     if (response.ok) {
-      console.log("Photo supprimée");
-      const { works, categories } = await getAllWorks();
-      displayWorksInModal(works);
+      document.getElementById(id).parentNode.remove();
     } else {
       console.error("Échec de la suppression");
     }
@@ -298,17 +297,16 @@ addPhotoForm.addEventListener("submit", async (event) => {
   await addWork(formData);
 });
 
+//affichage de la miniature modale post
 
-//affichage de la miniature modale post 
-
-const submit = document.querySelector('.submitBtn');
+const submit = document.querySelector(".submitBtn");
 const newPicturesBtn = document.getElementById("new-pictures");
 const imgPreview = document.getElementById("imagePreview");
 const logoImg = document.querySelector(".logoImage");
 const buttonAdd = document.querySelector(".addPhoto-btn");
 const formatImg = document.querySelector(".formatImg");
 
-newPicturesBtn.addEventListener("change", function(event) {
+newPicturesBtn.addEventListener("change", function (event) {
   getImgData(event);
 });
 
@@ -319,7 +317,7 @@ function getImgData(event) {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(files[0]);
 
-    fileReader.addEventListener("load", function() {
+    fileReader.addEventListener("load", function () {
       formatImg.style.display = "none";
       buttonAdd.style.display = "none";
       logoImg.style.display = "none";
@@ -331,13 +329,13 @@ function getImgData(event) {
 
 // gere la navigation des menus
 
-document.querySelectorAll('.nav-link').forEach((link) => {
-  link.addEventListener('click', (event) => {
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", (event) => {
     const sectionId = event.target.dataset.sectionId;
     const section = document.getElementById(sectionId);
 
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
     }
   });
 });
