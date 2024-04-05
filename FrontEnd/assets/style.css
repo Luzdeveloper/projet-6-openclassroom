@@ -275,7 +275,6 @@ input[type="submit"] {
   font-family: "Syne";
   font-weight: 700;
   color: white;
-  background-color: #1d6154;
   margin: 2em auto;
   width: 180px;
   text-align: center;
@@ -373,7 +372,6 @@ footer nav ul {
   text-decoration-line: underline;
 }
 
-
 .editionMod {
   display: none;
   background-color: black;
@@ -384,7 +382,6 @@ footer nav ul {
   padding-top: 15px;
   padding-bottom: 15px;
   align-items: center;
-
 }
 
 .editionMod p {
@@ -447,7 +444,7 @@ div.elementLink {
 
 /* Modal styles */
 
-.fa-trash-can{
+.fa-trash-can {
   color: white;
   cursor: pointer;
   z-index: 1;
@@ -482,7 +479,8 @@ div.elementLink {
   align-items: center;
 }
 
-.modalContainer,.modalContainerAdd {
+.modalContainer,
+.modalContainerAdd {
   width: 630px;
   min-height: 688px;
   padding: 15px;
@@ -502,14 +500,14 @@ div.elementLink {
 
 .modalContainerAdd p {
   color: #000;
-    text-align: center;
-    font-family: "Work Sans";
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-bottom: 40px;
-    cursor: context-menu;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 40px;
+  cursor: context-menu;
 }
 
 .addModal {
@@ -590,7 +588,7 @@ div.elementLink {
   border-color: #b3b3b3;
   margin-bottom: 25px;
   margin-top: 25px;
-  padding-bottom:216px;
+  padding-bottom: 216px;
 }
 
 .galleryPreview figure {
@@ -752,14 +750,25 @@ div.elementLink {
   width: 100%;
   height: auto;
   display: block;
-
 }
 
-.poubsupp{
+.poubsupp {
   display: flex;
   justify-content: center;
   gap: 20px;
   position: relative;
   padding-right: 0px;
   margin-right: 15px;
+}
+
+.submitBtn {
+  background: #b9c5cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+}
+
+.submitBtn:enabled {
+  background-color: #1d6154;
+  cursor: pointer;
 }

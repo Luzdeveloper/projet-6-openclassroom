@@ -50,3 +50,25 @@ crossIcons.forEach((crossIcon) => {
     addModal.style.display = "none";
   });
 });
+
+document.getElementById("addphotoForm").addEventListener("input", function () {
+  var isFormValid = true;
+
+  // vérifier chaque champ du formulaire
+  var inputs = this.querySelectorAll("input, select, textarea");
+  for (var i = 0; i < inputs.length; i++) {
+    if (!inputs[i].checkValidity()) {
+      isFormValid = false;
+      break;
+    }
+  }
+
+  // vérifier si un fichier a été sélectionné
+  var fileInput = document.getElementById("new-pictures");
+  if (!fileInput.files.length) {
+    isFormValid = false;
+  }
+
+  // activer/désactiver le bouton de soumission en fonction de la validité du formulaire
+  document.getElementById("submitBtn").disabled = !isFormValid;
+});
